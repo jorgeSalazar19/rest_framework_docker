@@ -20,11 +20,14 @@ APPS_DJANGO = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'rest_framework_swagger',
 
 ]
 
 APPS_USER = [
     'countries',
+    'apis',
 ]
 
 INSTALLED_APPS = APPS_DJANGO + APPS_USER
