@@ -13,14 +13,21 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-INSTALLED_APPS = [
+APPS_DJANGO = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
+
+APPS_USER = [
+    'countries',
+]
+
+INSTALLED_APPS = APPS_DJANGO + APPS_USER
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
