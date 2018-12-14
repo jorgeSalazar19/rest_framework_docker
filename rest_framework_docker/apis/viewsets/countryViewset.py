@@ -1,7 +1,3 @@
-from django.http import Http404
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework import status
 from rest_framework import generics
 
 
@@ -21,6 +17,30 @@ class CountryList(generics.ListAPIView):
 class CountryDetail(generics.RetrieveAPIView):
     """
     muestra los detalles de un pais reciendo el ID del pais por la URL
+    """
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer
+
+
+class CountryUpdate(generics.UpdateAPIView):
+    """
+    Actualiza un objeto determinado por un ID enviado como parametro
+    """
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer
+
+
+class CountryDestroy(generics.DestroyAPIView):
+    """
+    Elimina un objeto determinado or un Id enviado como parametro
+    """
+    queryset = Country.objects.all()
+    serializer_class = CountrySerializer
+
+
+class CountryCreate(generics.CreateAPIView):
+    """
+    Crea un objeto con los atributos requeridos en el formulario
     """
     queryset = Country.objects.all()
     serializer_class = CountrySerializer
